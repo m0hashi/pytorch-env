@@ -1,0 +1,16 @@
+version: '2.4'
+
+services: 
+  pytorch-env:
+    build:
+      context: ./configs
+      dockerfile: Dockerfile
+    runtime: nvidia
+    container_name: pytorch-env
+    environment: 
+    - NVIDIA_VISIBLE_DEVICES=all
+    - NVIDIA_DRIVER_CAPABILITIES=all
+    ports:
+    - 8891:8888
+    volumes:
+    - ./workspace:/workspace
