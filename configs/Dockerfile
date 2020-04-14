@@ -9,7 +9,8 @@ RUN apt-get update --fix-missing && \
 
 #install jupyter lab extensions
 #for  details, see -> https://qiita.com/canonrock16/items/d166c93087a4aafd2db4
-RUN conda install -c conda-forge jupyterlab=1.2.0 nodejs xeus-cling
+RUN conda install -c anaconda tensorflow-gpu==2.1.0
+RUN conda install -c conda-forge jupyterlab=1.2.0 nodejs
 #RUN conda install -c conda-forge/label/broken jupyterlab 
 #RUN conda install -c conda-forge nodejs
 RUN jupyter labextension install \
